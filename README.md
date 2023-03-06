@@ -134,7 +134,7 @@ while(true){
 
 ## Correctness of the Solution
 ### Mutual Exclusion
-For Mutual Exclusion either one writer can be accessing the critical section or one or more readers can be accessing the critical section. This is ensured by `reader_sem` semaphore which calls wait and acquires the `writer_sem` semaphore until there are atleast one reader in critical section. Therefore, writer cannot enter the critical section. Similary, if writer is in critical section then `writer_sem` semaphore will be required for reader to access the critical section which will ensure that is writer is in critical section then reader cannot access it's critical section. The `in_sem` semaphore also ensures that writer and reader are not in critical section simultaneously.
+For Mutual Exclusion either one writer can be accessing the critical section or one or more readers can be accessing the critical section. This is ensured by `reader_sem` semaphore which calls wait and acquires the `writer_sem` semaphore until there are atleast one reader in critical section. Therefore, writer cannot enter the critical section. Similary, if writer is in critical section then `writer_sem` semaphore will be required for reader to access the critical section which will ensure that if writer is in critical section then reader cannot access it's critical section. The `in_sem` semaphore also ensures that writer and reader are not in critical section simultaneously.
 ### Progress
 There is no cyclic access of resources therefore, the system cannot enter the deadlock state. Once a process completes the critical section then it signals the semaphores such that other process can enter the critical section.
 ### Bounded Waiting
