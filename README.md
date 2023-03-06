@@ -32,7 +32,7 @@ struct process{
 struct blocking_queue{
     process *Q_front, *Q_back; // stores the first and last process of the queue
     int size = 0 // size of the queue
-    void push_to_queue(process &P){ // the process is taken as the input
+    void push_to_queue(process* P){ // the process is taken as the input
         P->state_is_active = false; // the process entering the queue is blocked
         size++;
         if(size==1){
