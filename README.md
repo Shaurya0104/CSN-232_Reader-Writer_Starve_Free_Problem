@@ -47,7 +47,7 @@ struct blocking_queue{
     }
     proecess* pop_from_queue(){
         process* front_process = Q_front;// the first process of the queue is removed
-        front = front->next;
+        front = front->next_process;
         size--;
         return front_process;
     }
