@@ -85,7 +85,7 @@ struct semaphore{
 ```cpp
 semaphare* writer_sem = new semaphore(1);// the semaphores are initialized with one which is the number of readers that can be in critical section at a time
 semaphore* reader_sem = new semaphore(1);
-semaphore* in_sem  = new semaphore(1);// without this semaphore the write will suffer from starvation
+semaphore* in_sem  = new semaphore(1);// without this semaphore the writer will suffer from starvation
 int reader_count = 0;// this counts the number of readers in the critical section
 
 ```
