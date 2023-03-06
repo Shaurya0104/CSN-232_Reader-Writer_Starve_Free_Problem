@@ -95,13 +95,13 @@ while(true){
 // process_p is a process which is currently active
     in_sem.wait(process_P);// this ensures if writer is in the queue for wating then writer is given priority according to FIFO so that writer is not starving
     reader_sem.wait(process_P);
+    in_sem.signal();
     reader_count++;
     if(reader_count==1){
         // if reader count is 1 that means the first reader just started execution so it aquires the writer semaphore
        writer_sem.wait(process_P); 
     }
     reader_sem.sigal();
-    in_sem.signal();
 
     /* 
 
