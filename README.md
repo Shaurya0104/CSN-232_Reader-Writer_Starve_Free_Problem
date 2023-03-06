@@ -138,6 +138,6 @@ For Mutual Exclusion either one writer can be accessing the critical section or 
 ### Progress
 There is no cyclic access of resources therefore, the system cannot enter the deadlock state. Once a process completes the critical section then it signals the semaphores such that other process can enter the critical section.
 ### Bounded Waiting
-The generic solution with two semaphores causes starvation as readers come one after the other leaving writer to starve. But in this solution the third semaphore `in_sem` is ensuring FIFO. So, once Writer process arrives it is added to the queue, and the readers coming after the writer are also added to the queue such that until or unless the writer completes it's execution of the critical section, the other reader process after that reader cannot enter the critical section.
+The generic solution with two semaphores causes starvation as readers come one after the other leaving writer to starve. But in this solution the third semaphore `in_sem` is ensuring FIFO. So, once Writer process arrives it is added to the queue, and the readers coming after the writer are also added to the queue such that until or unless the writer completes it's execution of the critical section, the other writer process after that reader cannot enter the critical section.
 
-##### Hence, the solution satisfies all the requiremnets. So this can be said a solution to **Starve-Free Reader-Writer Problem**.
+##### Hence, the solution satisfies all the requiremnets. So this can be called a solution to **Starve-Free Reader-Writer Problem**.
