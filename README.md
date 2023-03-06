@@ -43,6 +43,7 @@ struct blocking_queue{
             Q_back->next_process = P;// the process is added to the end of the queue
             Q_back = P;
         }
+        return;
     }
     proecess* pop_from_queue(){
         process* front_process = Q_front;// the first process of the queue is removed
