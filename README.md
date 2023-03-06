@@ -7,7 +7,7 @@ Even reader process and writer process cannot access the critical section at the
 
 ## Solution Intuition 
 
-Semaphores are used to synchronise the processes such that no two writes processes or one writer and reader processes are accessing critical section at the same time. And if a situation arise when the above case happens then the process will go into the waiting queue.
+Semaphores are used to synchronise the processes such that no two writer processes or one writer and reader processes are accessing critical section at the same time. And if a situation arise when the above case happens then the process will go into the waiting queue.
 The normal solution uses two semaphores. When a reader enters the critical section it acquires the semaphore which is needed for writer process to enter it's critical section. And a writer needs a semaphore to enter a critcal section. Therfore, niether a reader and writer can enter in the critical section simultaneously nor two writer can enter critical section section simultaneously.
 The above solution solves the synchronisation problem but creates starvation problem, which happens when one reader process enters critical section and after that a writer process comes then it will go into the wating states, now until or unless all the reader processes are executed the writer process will stay in the wating queue which leads to starvation.
 Therefore, instead of two, three semaphores are used such that if a writer comes after reader, then it will be given priority as FIFO(First In First Out). Hence, eliminating the chance of starvation of writer.
